@@ -8,6 +8,6 @@ public class ArrayListTest {
         ArrayList list = new ArrayList<String>();
         list.add(new Object());
         list.add(new Object());
-        String a = (String)list.get(0);
+        String a = (String) list.get(0);
     }
 }

@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class StringTest {
-    // tests for equals()
+                        // tests for equals()
 
     @Test
     public void testEqualsWithStringLiteralsAndStringObjectWithDifferentValue() throws Exception {
@@ -13,6 +13,7 @@ public class StringTest {
         boolean result = name1.equals(name2);
         assertEquals(false, result);
     }
+
     @Test
     public void testEqualsWithStringLiteralsAndStringObjectWithSameValue() throws Exception {
         String name1 = "Kunal";
@@ -55,7 +56,7 @@ public class StringTest {
         assertEquals(false, result);
     }
 
-    //tests for == operator
+                        //tests for == operator
     @Test
     public void testEqualsOperatorWithStringLiteralsAndStringObjectWithSameValue() throws Exception {
         String name1 = "Kunal";

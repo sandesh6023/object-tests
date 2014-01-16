@@ -1,5 +1,4 @@
 
-import java.util.*;
 
 public class Person implements Comparable<Person> {
     public String name;

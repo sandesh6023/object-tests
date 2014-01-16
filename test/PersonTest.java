@@ -31,7 +31,7 @@ public class PersonTest {
         });
         assertEquals(expected, people);
 
-    };
+    }
 
     @Test
     public void testSortPeopleByAge() throws Exception {
@@ -46,7 +46,7 @@ public class PersonTest {
         });
         assertEquals(expected, people);
 
-    };
+    }
 
     @Test
     public void testSortPeopleByName() throws Exception {
@@ -65,8 +65,6 @@ public class PersonTest {
 
     }
 
-    ;
-
     @Test
     public void testSortPeopleDescByName() throws Exception {
         List<Person> people = addPeopleToList(digvijay, kunal, swamiji);
@@ -82,8 +80,6 @@ public class PersonTest {
         });
         assertEquals(expected, people);
     }
-
-    ;
 
     // equals and hashcode
     @Test
