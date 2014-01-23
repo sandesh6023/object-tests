@@ -1,0 +1,43 @@
+<project name="object-tests" default = "runTest">
+    <target name="clean">
+        <delete dir="build"></delete>
+    </target>
+
+    <target name="createDir">
+        <mkdir dir="build"></mkdir>
+        <mkdir dir="build/lib"></mkdir>
+    </target>
+    <target name="compile" depends="createDir">
+        <mkdir dir="build/classes"></mkdir>
+        <javac srcdir="src" destdir="build/classes" includeantruntime="false"></javac>
+    </target>
+
+    <target name="createSrcJar" depends="compile">
+        <jar destfile="build/lib/object-classes.jar" basedir="build/classes"></jar>
+    </target>
+
+    <target name="compileTest" depends="createSrcJar">
+        <mkdir dir="build/TestClasses"></mkdir>
+        <javac srcdir="test" destdir="build/TestClasses"
+               classpath="build/lib/object-classes.jar;dependencies/junit-4.10.jar"
+               includeantruntime="false"></javac>
+    </target>
+
+    <target name="runTest" depends="compileTest">
+        <junit>
+            <classpath>
+                <pathelement location="build/classes"/>
+                <pathelement location="build/TestClasses"/>
+                <pathelement location="dependencies/junit-4.10.jar"/>
+            </classpath>
+            <batchtest>
+                <fileset dir="build/TestClasses">
+                    <include name="**/*Test*"/>
+                    <exclude name="**/*$*.class"/>
+                </fileset>
+            </batchtest>
+            <formatter type="brief" usefile="false"/>
+        </junit>
+    </target>
+
+</project>
